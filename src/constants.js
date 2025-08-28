@@ -28,7 +28,7 @@ import WebMasterLogo from "./assets/company-logo/Webmasters_logo.jpeg";
 import UniLogo from "./assets/education-logo/Uni.jpeg";
 
 // project section logos
-import moviereclogo from "./assets/work-logo/movie_rec.png";
+import NetflexHome from "./assets/work-logo/Netflex-Clone.png";
 import BasketHome from "./assets/work-logo/Basket.png";
 import shrimpzoneHome from "./assets/work-logo/Shrimp-zone.png";
 import ESportsHome from "./assets/work-logo/esports.png";
@@ -152,16 +152,26 @@ export const education = [
 export const projects = [
   {
     id: 0,
+    title: "Netflix Clone",
+    description:
+      "I built a fully responsive Netflix clone with a modern React 19 + Vite setup. The app features secure authentication (signup & login) powered by Firebase, smooth client-side routing with React Router, and real-time user interaction feedback through React-Toastify. Designed with a mobile-first approach, it adapts seamlessly across devices (mobile, tablet, desktop). The project is deployed on Vercel for fast and reliable hosting ",
+    image: NetflexHome,
+    tags: ["React JS", "Vite", "CSS", "Firebase Auth", "React Firebase Hooks", "React Toastify", "Responsive Design", "Vercel Deployment"],
+    github: "https://github.com/youssefassal/Netflix-Clone",
+    webapp: "https://youssef-assal-netflix.vercel.app/",
+  },
+  {
+    id: 1,
     title: "Basket – E-Commerce Website",
     description:
       "Developed a responsive e-commerce web app using React, Vite, and Tailwind CSS. Implemented product listings, detailed views, a shopping cart system, and simulated authentication. Managed state with React Context API, integrated mock APIs using Axios, and optimized performance with lazy loading and code splitting.",
     image: BasketHome,
-    tags: ["React JS", "Tailwind CSS", "Vite", "Context API", "Axios", "Responsive Design"],
+    tags: ["React JS", "Vite", "Tailwind CSS", "Context API", "Axios", "Responsive Design", "Vercel"],
     github: "https://github.com/youssefassal/Basket-Ecommerce",
     webapp: "https://basket-ruddy.vercel.app/",
   },
   {
-    id: 1,
+    id: 2,
     title: "Shrimp Zone - Restaurant Website",
     description:
       "Built a fully responsive multi-page restaurant website using React, Bootstrap, and React Router. Implemented dynamic routing for smooth navigation and structured reusable components to improve scalability. Styled with Bootstrap to ensure a consistent and user-friendly layout across devices.",
@@ -171,7 +181,7 @@ export const projects = [
     webapp: "https://youssefassal.github.io/Shrimp-Zone-Project/",
   },
   {
-    id: 2,
+    id: 3,
     title: "E-Sports Team Website",
     description:
       "Designed and developed a responsive website using HTML, CSS, and Bootstrap to showcase teams, events, and news. Focused on creating a clean layout, smooth navigation, and a visually appealing user experience to highlight e-sports content effectively.",
@@ -181,7 +191,7 @@ export const projects = [
     webapp: "https://youssefassal.github.io/3rd-FE-Project/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Movies App",
     description:
       "Created a responsive movie browsing website using HTML, CSS, JavaScript, and Bootstrap. Features key sections such as “Opening This Week” and “Coming Soon,” providing users with an organized and engaging way to explore movie releases.",
@@ -191,7 +201,7 @@ export const projects = [
     webapp: "https://youssefassal.github.io/Phase1_Task1/",
   },
   {
-    id: 4,
+    id: 5,
     title: "Simple Todo List App",
     description:
       "Built a simple and responsive Todo List app using HTML, CSS, JavaScript, and Bootstrap. Allows users to add tasks, mark them as completed, and remove them, providing an easy way to stay organized.",
@@ -201,7 +211,7 @@ export const projects = [
     webapp: "https://youssefassal.github.io/Phase1_Task2/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Simple Peripherals Store",
     description:
       "Developed a simple e-commerce website for gaming peripherals using HTML, CSS, JavaScript, and Bootstrap. Implemented product search by category and name, along with a signup and login system that stores user information in local storage. Designed to be responsive and user-friendly for smooth browsing and shopping.",
@@ -211,7 +221,7 @@ export const projects = [
     webapp: "https://youssefassal.github.io/Shopping-website-1st-javascript/index.html",
   },
   {
-    id: 6,
+    id: 7,
     title: "Simple Laptop Store App v2.0",
     description:
       "Built a simple online store using HTML, CSS, and JavaScript. Implemented core e-commerce features including adding products to a cart and automatically calculating the total cart amount. Designed with a focus on simplicity and ease of use.",
@@ -221,7 +231,7 @@ export const projects = [
     webapp: "https://youssefassal.github.io/First-JS-Project/",
   },
   {
-    id: 7,
+    id: 8,
     title: "Simple Laptop Store App v1.0",
     description:
       "Created a simple, non-responsive laptop store layout using only HTML and CSS. Showcased products in a clean static design to simulate an online storefront.",

@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './components/Navbar/Navbar'
-import About from './components/About/About'
+import Hero from './components/Hero/Hero'
 import Skills from './components/Skills/Skills'
 import Experience from './components/Experience/Experience'
 import Work from './components/Work/Work'
@@ -8,6 +8,7 @@ import Education from './components/Education/Education'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import BlurBlob from './BlurBlob'
+import About from './components/About/About'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       
       <div className='relative pt-20'>
         <Navbar />
+        <Hero />
         <About />
         <Skills />
         <Experience />

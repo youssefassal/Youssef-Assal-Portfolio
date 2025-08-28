@@ -1,77 +1,141 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Tilt from "react-parallax-tilt";
-import profileImage from '../../assets/Personal circle.png';
+import profileImage from "../../assets/Personal circle.png";
 
-const About = () => {
+function About() {
+  const handleMenuItemClick = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
+    // <section
+    //   id="about"
+    //   className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans bg-skills-gradient clip-path-custom"
+    // >
+    //   {/* section title */}
+    //   <div className="text-center mb-8 ">
+    //     <h2 className="text-3xl sm:text-4xl font-bold text-white">About Me</h2>
+    //     <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-2"></div>
+    //     <p className="text-gray-400 mt-4 text-lg font-semibold">
+    //       I am a self-taught web developer with a passion for creating engaging
+    //       and user-friendly websites.
+    //     </p>
+    //   </div>
+
+    //   {/* about content */}
+    //   <div className="flex flex-col md:flex-row justify-between items-center">
+    //     {/* left side */}
+    //     <div className="md:w-1/2 text-center md:text-right mt-8 md:mt-0 ">
+    //       {/* about image */}
+    //       <img
+    //         src={profileImage}
+    //         alt="about"
+    //         className="w-[50%] h-[50%] object-cover rounded-full mx-auto"
+    //       />
+    //     </div>
+
+    //     {/* right side */}
+    //     <div className="md:w-1/2 text-center md:text-left mt-8 md:mt-0">
+    //       <p className="text-gray-400 text-lg font-semibold">
+    //         I’m an engineering student specializing in Computer and
+    //         Communications with a strong passion for front-end development. My
+    //         main skills include building responsive and interactive web
+    //         applications using React, Vite, CSS, and modern JavaScript tools. In
+    //         addition to web development, I’m also exploring DevOps practices
+    //         such as cloud infrastructure, automation, and CI/CD, aiming to
+    //         bridge the gap between development and operations. I enjoy creating
+    //         user-friendly digital experiences and continuously improving my
+    //         technical expertise.
+    //       </p>
+
+    //       {/* Contact me button */}
+    //       <button
+    //         onClick={() => handleMenuItemClick("contact")}
+    //         className="mt-8 text-gray-300 hover:text-[#8245ec] border-2 border-[#8245ec] px-4 py-2 rounded-4xl"
+    //       >
+    //         Contact Me
+    //       </button>
+    //     </div>
+    //   </div>
+    // </section>
+
     <section
       id="about"
-      className="py-4 px-[7vw] md:px-[7vw] lg:px-[20vw] font-sans mt-16 md:mt-24 lg:mt-32"
+      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans bg-skills-gradient clip-path-custom"
     >
-      <div className="flex flex-col-reverse md:flex-row justify-between items-center">
-        {/* left side */}
-        <div className="md:w-1/2 text-center md:text-left mt-8 md:mt-0">
-          {/* Greeting */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-2 leading-tight">
-            Hi, I am
-          </h1>
-          {/* Name */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
-            Youssef Assal
-          </h2>
-          {/* Skills heading with typing effect */}
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#8245ec] leading-tight">
-            <span className="text-white">I am a </span>
-            <TypeAnimation
-              sequence={[
-                "Frontend Developer", 2000,
-                "DevOps Engineer", 2000,
-                "App Developer", 2000,
-                "UI/UX Designer", 2000,
-                "Coder", 2000,
-              ]}
-              speed={50}
-              repeat={Infinity}
-            />
+      {/* section title */}
+      <div className="text-center mb-8 ">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white">About Me</h2>
+        <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-2"></div>
+        <p className="text-gray-400 mt-4 text-lg font-semibold">
+          I am a self-taught web developer with a passion for creating engaging
+          and user-friendly websites.
+        </p>
+      </div>
 
-          </h3>
-          {/* About me paragraph */}
-          <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed">
-            I’m a front-end developer passionate about building
-            modern, responsive, and user-friendly web apps. With
-            experience in React.js, Tailwind, and real-world projects,
-            I focus on turning ideas into clean, interactive digital experiences.
-          </p>
-          {/* Resume button */}
-          <a
-            href="https://drive.google.com/file/d/1Am-kW8V8CxX-4OCcvbtxLFOBkA8R3g_L/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300 transform hover:scale-105"
-            style={{
-              background: "linear-gradient(90deg, #8245ec, #a855f7)",
-              boxShadow: "0 0 2px #8245ec, 0 0 2px #8245ec, 0 0 40px #8245ec",
-            }}
-          >
-            DOWNLOAD CV
-          </a>
+      {/* about content */}
+      <div className="flex flex-col md:flex-row justify-between items-center">
+        {/* left side */}
+        <div className="md:w-1/2 text-center md:text-right mt-8 md:mt-0 ">
+          {/* about image */}
+          <img
+            src={profileImage}
+            alt="about"
+            className="w-[50%] h-[50%] object-cover rounded-full mx-auto"
+          />
         </div>
+
         {/* right side */}
-        <div className="md:w-1/2 flex justify-center md:justify-end ">
-          <Tilt
-            className="w-48 h-48 sm:w-64 sm:h-64 md:w-[30rem] md:h-[30rem] border-purple-700 rounded-full"
-            tiltMaxAngleX={20}
-            tiltMaxAngleY={20}
-            perspective={1000}
-            scale={1.05}
-            transitionSpeed={1000}
-            gyroscope={true}
+        <div className="md:w-1/2 text-center md:text-left mt-8 md:mt-0">
+          <p className="text-gray-400 text-lg font-semibold">
+            I’m an engineering student specializing in Computer and
+            Communications with a strong passion for front-end development. My
+            main skills include building responsive and interactive web
+            applications using React, Vite, CSS, and modern JavaScript tools. In
+            addition to web development, I’m also exploring DevOps practices
+            such as cloud infrastructure, automation, and CI/CD, aiming to
+            bridge the gap between development and operations. I enjoy creating
+            user-friendly digital experiences and continuously improving my
+            technical expertise.
+          </p>
+
+          {/* career goals */}
+          <p className="text-gray-400 text-lg font-semibold mt-4">
+            My career goal is to become a leading front-end developer and
+            contribute to the creation of innovative and user-friendly digital
+            products. I'm excited to collaborate with like-minded individuals
+            and companies to bring new ideas to life.
+          </p>
+
+          {/* skills */}
+          <ul className="list-none mt-4">
+            <li className="text-gray-400 text-lg font-semibold">
+              Front-end development (React, Vite, CSS, JavaScript)
+            </li>
+            <li className="text-gray-400 text-lg font-semibold">
+              DevOps practices (cloud infrastructure, automation, CI/CD)
+            </li>
+          </ul>
+
+          {/* CTA */}
+          <p className="text-gray-400 text-lg font-semibold mt-4">
+            Let's work together on a project! Check out my latest work and let's
+            discuss how we can bring your ideas to life.
+          </p>
+
+          {/* contact button */}
+          <button
+            onClick={() => handleMenuItemClick("contact")}
+            className="mt-8 text-gray-300 hover:text-[#8245ec] border-2 border-[#8245ec] px-4 py-2 rounded-4xl"
           >
-            <img src={profileImage} alt="Youssef Assal"
-              className="w-full h-full rounded-full object-cover drop-shadow-[0_10px_20px_rgba(130,69,236,0.5)]"
-            />
-          </Tilt>
+            Contact Me
+          </button>
+
+          
         </div>
       </div>
     </section>

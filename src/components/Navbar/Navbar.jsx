@@ -31,6 +31,7 @@ const Navbar = () => {
 
 
   const menuItems = [
+    { id: "hero", label: "Home" },
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
     { id: "experience", label: "Experience" },
@@ -44,7 +45,7 @@ const Navbar = () => {
       }`}>
       <div className="text-white py-5 flex justify-around items-center">
         {/* Logo */}
-        <div onClick={() => handleMenuItemClick("about")} className="text-lg font-semibold cursor-pointer">
+        <div onClick={() => handleMenuItemClick("hero")} className="text-lg font-semibold cursor-pointer">
           <span className="text-[#8245ec]">&lt;</span>
           <span className="text-white">Youssef</span>
           <span className="text-[#8245ec]">/</span>
