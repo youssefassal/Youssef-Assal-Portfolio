@@ -40,6 +40,9 @@ import TodoHome from "./assets/work-logo/Todo.png";
 import PeripheralHome from "./assets/work-logo/peripherals-ecommerce.png";
 import laptopstorev2Home from "./assets/work-logo/Laptopstore.png";
 import laptopstorev1Home from "./assets/work-logo/Laptopstorev1.png";
+import emptyHome from "./assets/work-logo/empty.png";
+import emptyHome2 from "./assets/work-logo/empty2.png";
+
 
 export const SkillsInfo = [
   {
@@ -272,5 +275,25 @@ export const projects = [
     tags: ["HTML", "CSS"],
     github: "https://github.com/youssefassal/2nd-FE-project",
     webapp: "https://youssefassal.github.io/2nd-FE-project/",
+  },
+  {
+    id: 10,
+    title: "",
+    description:
+      "",
+    image: emptyHome2,
+    tags: [],
+    github: "",
+    webapp: "",
+  },
+  {
+    id: 11,
+    title: "",
+    description:
+      "",
+    image: emptyHome2,
+    tags: [],
+    github: "",
+    webapp: "",
   }
 ];
