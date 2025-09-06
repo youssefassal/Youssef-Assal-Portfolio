@@ -13,6 +13,9 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    form.current.reset();
+
+
     emailjs
       .sendForm(
         "service_wtevb67",
