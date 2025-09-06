@@ -24,6 +24,7 @@ import reactbootstrap from "./assets/tech-logo/Reactbootstrap-icon.png";
 import CATLogo from "./assets/company-logo/cat_reloaded_logo.jpeg";
 import DEPILogo from "./assets/company-logo/depi_logo.jpeg";
 import WebMasterLogo from "./assets/company-logo/Webmasters_logo.jpeg";
+import GascoLogo from "./assets/company-logo/Gasco.jpeg";
 
 // education section logos
 import UniLogo from "./assets/education-logo/Uni.jpeg";
@@ -104,42 +105,6 @@ export const experience = [
   },
   {
     id: 1,
-    img: WebMasterLogo,
-    role: "Front End Development Intern",
-    company: "Web Masters",
-    date: "Jul 2025 - Aug 2025",
-    desc: "Contributed to front-end development projects using React.js, Tailwind CSS, and Vite. Built responsive and scalable UI components based on real-world design specifications. Collaborated in an agile environment, participating in code reviews, daily stand-ups, and teamwork to deliver high-quality features.",
-    skills: [
-      "HTML5",
-      "CSS",
-      "JavaScript",
-      "React JS",
-      "Tailwind CSS",
-      "Vite",
-      "Bootstrap",
-      "Responsive Web Design",
-    ],
-  },
-  {
-    id: 2,
-    img: WebMasterLogo,
-    role: "Front End Development Intern",
-    company: "Web Masters",
-    date: "Jul 2025 - Aug 2025",
-    desc: "Contributed to front-end development projects using React.js, Tailwind CSS, and Vite. Built responsive and scalable UI components based on real-world design specifications. Collaborated in an agile environment, participating in code reviews, daily stand-ups, and teamwork to deliver high-quality features.",
-    skills: [
-      "HTML5",
-      "CSS",
-      "JavaScript",
-      "React JS",
-      "Tailwind CSS",
-      "Vite",
-      "Bootstrap",
-      "Responsive Web Design",
-    ],
-  },
-  {
-    id: 3,
     img: CATLogo,
     role: "Vice Head of Game Development",
     company: "CAT Reloaded",
@@ -155,6 +120,39 @@ export const experience = [
       "Pixel Art",
     ],
   },
+  {
+    id: 2,
+    img: GascoLogo,
+    role: "Network Internship",
+    company: "Egyptian Natural Gas Company - Gasco",
+    date: "Aug 2025 - Sep 2025",
+    desc: "a 1-month internship at the Egyptian Natural Gas Company (GASCO), where I gained practical experience in IT infrastructure, telecommunications, and SCADA systems, explored technologies like NEC Microwave Networks and VSAT, and received an introduction to Safety Engineering.",
+    skills: [
+      "SCADA",
+      "Fire Safety",
+      "Safety",
+      "Network"
+    ],
+  },
+  {
+    id: 3,
+    img: WebMasterLogo,
+    role: "Front End Development Intern",
+    company: "Web Masters",
+    date: "Jul 2025 - Aug 2025",
+    desc: "Contributed to front-end development projects using React.js, Tailwind CSS, and Vite. Built responsive and scalable UI components based on real-world design specifications. Collaborated in an agile environment, participating in code reviews, daily stand-ups, and teamwork to deliver high-quality features.",
+    skills: [
+      "HTML5",
+      "CSS",
+      "JavaScript",
+      "React JS",
+      "Tailwind CSS",
+      "Vite",
+      "Bootstrap",
+      "Responsive Web Design",
+    ],
+  },
+  
 ];
 
 export const education = [
