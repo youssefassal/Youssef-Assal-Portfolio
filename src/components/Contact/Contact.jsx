@@ -74,27 +74,27 @@ const Contact = () => {
 
           <div className="mt-4 flex flex-col space-y-4">
             <div className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500">
-              <label htmlFor="user_name" className="text-white">
+              <h2 className="text-white">
                 <IoLocationSharp className="inline mr-2 mb-1 text-purple-500 text-2xl" />Location:
-              </label>
+              </h2>
               <h3 className="text-gray-400">Mansoura, Dakahlia, Egypt</h3>
             </div>
             <div className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500">
-              <label htmlFor="user_name" className="text-white">
+              <h2 className="text-white">
                 <MdEmail className="inline mr-2 mb-1 text-purple-500 text-2xl" />Email:
-              </label>
+              </h2>
               <h3 className="text-gray-400">youssefassal7@gmail.com</h3>
             </div>
             <div className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500">
-              <label htmlFor="user_name" className="text-white">
+              <h2 className="text-white">
                 <FaPhone className="inline mr-2 mb-1 text-purple-500 text-2xl" />Phone:
-              </label>
+              </h2>
               <h3 className="text-gray-400">+201003554146</h3>
             </div>
             <div className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500">
-              <label htmlFor="user_name" className="text-white">
+              <h2 className="text-white">
                 <MdEventAvailable className="inline mr-2 mb-1 text-purple-500 text-2xl" />Availability:
-              </label>
+              </h2>
               <h3 className="text-gray-400">Open for opportunities</h3>
             </div>
 

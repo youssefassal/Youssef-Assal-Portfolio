@@ -18,6 +18,7 @@ import redhatlinuxlogo from "./assets/tech-logo/Red_Hat.png";
 import ansibleLogo from "./assets/tech-logo/Ansible.png";
 import DockerLogo from "./assets/tech-logo/docker.png";
 import KubernetesLogo from "./assets/tech-logo/Kubernetes.png";
+import reactbootstrap from "./assets/tech-logo/Reactbootstrap-icon.png";
 
 // experience section logos
 import CATLogo from "./assets/company-logo/cat_reloaded_logo.jpeg";
@@ -51,6 +52,7 @@ export const SkillsInfo = [
       { name: "Redux", logo: reduxlogo },
       { name: "Tailwind CSS", logo: tailwindcsslogo },
       { name: "Bootstrap", logo: bootstraplogo },
+      { name: "React Bootstrap", logo: reactbootstrap },
     ],
   },
   {
@@ -120,6 +122,24 @@ export const experience = [
   },
   {
     id: 2,
+    img: WebMasterLogo,
+    role: "Front End Development Intern",
+    company: "Web Masters",
+    date: "Jul 2025 - Aug 2025",
+    desc: "Contributed to front-end development projects using React.js, Tailwind CSS, and Vite. Built responsive and scalable UI components based on real-world design specifications. Collaborated in an agile environment, participating in code reviews, daily stand-ups, and teamwork to deliver high-quality features.",
+    skills: [
+      "HTML5",
+      "CSS",
+      "JavaScript",
+      "React JS",
+      "Tailwind CSS",
+      "Vite",
+      "Bootstrap",
+      "Responsive Web Design",
+    ],
+  },
+  {
+    id: 3,
     img: CATLogo,
     role: "Vice Head of Game Development",
     company: "CAT Reloaded",
