@@ -71,6 +71,10 @@ const Experience = () => {
                   ))}
                 </ul>
               </div>
+
+              <div className="mt-4">
+                <button onClick={() => window.open(experience.credential, "_blank")} className="text-gray-300 hover:text-[#8245ec] border-2 border-[#8245ec] px-4 py-2 rounded-4xl w-full">Show credential</button>
+              </div>
             </div>
           </div>
         ))}
