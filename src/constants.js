@@ -30,6 +30,7 @@ import GascoLogo from "./assets/company-logo/Gasco.jpeg";
 import UniLogo from "./assets/education-logo/Uni.jpeg";
 
 // project section logos
+import EasyBuyHome from "./assets/work-logo/EasyBuy.png";
 import CryptoplaceHome from "./assets/work-logo/Cryptoplace.png";
 import NetflexHome from "./assets/work-logo/Netflex-Clone.png";
 import BasketHome from "./assets/work-logo/Basket.png";
@@ -40,7 +41,6 @@ import TodoHome from "./assets/work-logo/Todo.png";
 import PeripheralHome from "./assets/work-logo/peripherals-ecommerce.png";
 import laptopstorev2Home from "./assets/work-logo/Laptopstore.png";
 import laptopstorev1Home from "./assets/work-logo/Laptopstorev1.png";
-import emptyHome from "./assets/work-logo/empty.png";
 import emptyHome2 from "./assets/work-logo/empty2.png";
 
 
@@ -178,6 +178,16 @@ export const education = [
 export const projects = [
   {
     id: 0,
+    title: "EasyBuy Ecommerce",
+    description:
+      "EasyBuy is a modern and fully responsive e-commerce website built with React 19, Vite, and TailwindCSS, featuring product listings, detailed product views with image zoom, and interactive carousels powered by Swiper. The project integrates real-time notifications with React Toastify and React Hot Toast, as well as user-friendly confirmation dialogs using SweetAlert2. Designed with smooth navigation via React Router DOM and deployed on Vercel, EasyBuy showcases skills in building scalable, user-focused shopping experiences with clean UI and responsive design.",
+    image: EasyBuyHome,
+    tags: ["React JS", "Vite", "TailwindCSS", "React Router DOM", "Swiper", "React Inner Image Zoom", "React Toastify", "React Hot Toast", "SweetAlert2", "Responsive Design", "Vercel Deployment"],
+    github: "https://github.com/youssefassal/EasyBuy-ecommerce",
+    webapp: "https://easybuy-ecommerce.vercel.app/",
+  },
+  {
+    id: 1,
     title: "Cryptoplace Web App",
     description:
       "CryptoPlace is a responsive cryptocurrency web application built with React 19, Vite, and CSS, featuring interactive data visualization using React Google Charts. It provides a clean, user-friendly interface with smooth navigation powered by React Router DOM, making it easy to explore cryptocurrency trends across devices. The project is deployed on Vercel, showcasing skills in frontend development, data visualization, and responsive design.",
@@ -187,7 +197,7 @@ export const projects = [
     webapp: "https://youssef-assal-cryptoplace.vercel.app/",
   },
   {
-    id: 1,
+    id: 2,
     title: "Netflix Clone",
     description:
       "I built a fully responsive Netflix clone with a modern React 19 + Vite setup. The app features secure authentication (signup & login) powered by Firebase, smooth client-side routing with React Router, and real-time user interaction feedback through React-Toastify. Designed with a mobile-first approach, it adapts seamlessly across devices (mobile, tablet, desktop). The project is deployed on Vercel for fast and reliable hosting ",
@@ -197,7 +207,7 @@ export const projects = [
     webapp: "https://youssef-assal-netflix.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Basket – E-Commerce Website",
     description:
       "Developed a responsive e-commerce web app using React, Vite, and Tailwind CSS. Implemented product listings, detailed views, a shopping cart system, and simulated authentication. Managed state with React Context API, integrated mock APIs using Axios, and optimized performance with lazy loading and code splitting.",
@@ -207,7 +217,7 @@ export const projects = [
     webapp: "https://basket-ruddy.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Shrimp Zone - Restaurant Website",
     description:
       "Built a fully responsive multi-page restaurant website using React, Bootstrap, and React Router. Implemented dynamic routing for smooth navigation and structured reusable components to improve scalability. Styled with Bootstrap to ensure a consistent and user-friendly layout across devices.",
@@ -217,7 +227,7 @@ export const projects = [
     webapp: "https://youssefassal.github.io/Shrimp-Zone-Project/",
   },
   {
-    id: 4,
+    id: 5,
     title: "E-Sports Team Website",
     description:
       "Designed and developed a responsive website using HTML, CSS, and Bootstrap to showcase teams, events, and news. Focused on creating a clean layout, smooth navigation, and a visually appealing user experience to highlight e-sports content effectively.",
@@ -227,7 +237,7 @@ export const projects = [
     webapp: "https://youssefassal.github.io/3rd-FE-Project/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Movies App",
     description:
       "Created a responsive movie browsing website using HTML, CSS, JavaScript, and Bootstrap. Features key sections such as “Opening This Week” and “Coming Soon,” providing users with an organized and engaging way to explore movie releases.",
@@ -237,7 +247,7 @@ export const projects = [
     webapp: "https://youssefassal.github.io/Phase1_Task1/",
   },
   {
-    id: 6,
+    id: 7,
     title: "Simple Todo List App",
     description:
       "Built a simple and responsive Todo List app using HTML, CSS, JavaScript, and Bootstrap. Allows users to add tasks, mark them as completed, and remove them, providing an easy way to stay organized.",
@@ -247,7 +257,7 @@ export const projects = [
     webapp: "https://youssefassal.github.io/Phase1_Task2/",
   },
   {
-    id: 7,
+    id: 8,
     title: "Simple Peripherals Store",
     description:
       "Developed a simple e-commerce website for gaming peripherals using HTML, CSS, JavaScript, and Bootstrap. Implemented product search by category and name, along with a signup and login system that stores user information in local storage. Designed to be responsive and user-friendly for smooth browsing and shopping.",
@@ -257,7 +267,7 @@ export const projects = [
     webapp: "https://youssefassal.github.io/Shopping-website-1st-javascript/index.html",
   },
   {
-    id: 8,
+    id: 9,
     title: "Simple Laptop Store App v2.0",
     description:
       "Built a simple online store using HTML, CSS, and JavaScript. Implemented core e-commerce features including adding products to a cart and automatically calculating the total cart amount. Designed with a focus on simplicity and ease of use.",
@@ -267,7 +277,7 @@ export const projects = [
     webapp: "https://youssefassal.github.io/First-JS-Project/",
   },
   {
-    id: 9,
+    id: 10,
     title: "Simple Laptop Store App v1.0",
     description:
       "Created a simple, non-responsive laptop store layout using only HTML and CSS. Showcased products in a clean static design to simulate an online storefront.",
@@ -275,16 +285,6 @@ export const projects = [
     tags: ["HTML", "CSS"],
     github: "https://github.com/youssefassal/2nd-FE-project",
     webapp: "https://youssefassal.github.io/2nd-FE-project/",
-  },
-  {
-    id: 10,
-    title: "",
-    description:
-      "",
-    image: emptyHome2,
-    tags: [],
-    github: "",
-    webapp: "",
   },
   {
     id: 11,
