@@ -15,7 +15,7 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
-    }
+    };
   }, []);
 
   // Smooth scroll function
@@ -23,12 +23,15 @@ const Navbar = () => {
     setActiveSection(sectionId);
     setIsOpen(false);
 
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+    if (sectionId === "hero") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
-
 
   const menuItems = [
     { id: "hero", label: "Home" },
@@ -36,16 +39,23 @@ const Navbar = () => {
     { id: "skills", label: "Skills" },
     { id: "experience", label: "Experience" },
     { id: "work", label: "Work" },
-    { id: "education", label: "Education" }
+    { id: "education", label: "Education" },
   ];
 
-
   return (
-    <nav className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] md:px-[7vw] lg:px-[20vw] ${isScrolled ? "bg-[#050414] bg-opacity-50 backdrop-blur-md shadow-md" : "bg-transparent"
-      }`}>
+    <nav
+      className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] md:px-[7vw] lg:px-[20vw] ${
+        isScrolled
+          ? "bg-[#050414] bg-opacity-50 backdrop-blur-md shadow-md"
+          : "bg-transparent"
+      }`}
+    >
       <div className="text-white py-5 flex justify-around items-center">
         {/* Logo */}
-        <div onClick={() => handleMenuItemClick("hero")} className="text-lg font-semibold cursor-pointer">
+        <div
+          onClick={() => handleMenuItemClick("hero")}
+          className="text-lg font-semibold cursor-pointer"
+        >
           <span className="text-[#8245ec]">&lt;</span>
           <span className="text-white">Youssef</span>
           <span className="text-[#8245ec]">/</span>
@@ -56,8 +66,12 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 text-gray-300">
           {menuItems.map((item) => (
-            <li key={item.id} className={`cursor-pointer hover:text-[#8245ec] ${activeSection === item.id ? "text-[#8245ec]" : ""
-              }`}>
+            <li
+              key={item.id}
+              className={`cursor-pointer hover:text-[#8245ec] ${
+                activeSection === item.id ? "text-[#8245ec]" : ""
+              }`}
+            >
               <button onClick={() => handleMenuItemClick(item.id)}>
                 {item.label}
               </button>
@@ -88,26 +102,28 @@ const Navbar = () => {
 
           {/* Contact Button */}
           <div className="hidden md:flex sm:ml-4">
-            <button onClick={() => handleMenuItemClick("contact")} className="text-gray-300 hover:text-[#8245ec] border-2 border-[#8245ec] px-4 py-2 rounded-4xl">Contact Me</button>
+            <button
+              onClick={() => handleMenuItemClick("contact")}
+              className="text-gray-300 hover:text-[#8245ec] border-2 border-[#8245ec] px-4 py-2 rounded-4xl"
+            >
+              Contact Me
+            </button>
           </div>
         </div>
 
-
         {/* Mobile Menu Icons */}
         <div className="md:hidden">
-          {
-            isOpen ? (
-              <FiX
-                className="text-3xl text-[#8245ec] cursor-pointer"
-                onClick={() => setIsOpen(false)}
-              />
-            ) : (
-              <FiMenu
-                className="text-3xl text-[#8245ec] cursor-pointer"
-                onClick={() => setIsOpen(true)}
-              />
-            )
-          }
+          {isOpen ? (
+            <FiX
+              className="text-3xl text-[#8245ec] cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            />
+          ) : (
+            <FiMenu
+              className="text-3xl text-[#8245ec] cursor-pointer"
+              onClick={() => setIsOpen(true)}
+            />
+          )}
         </div>
       </div>
 
@@ -116,9 +132,11 @@ const Navbar = () => {
         <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-[#050414] bg-opacity-50 backdrop-filter backdrop-blur-lg z-50 rounded-lg shadow-lg md:hidden">
           <ul className="flex flex-col items-center space-y-4 py-4 text-gray-300">
             {menuItems.map((item) => (
-              <li key={item.id} className={`cursor-pointer hover:text-[#8245ec] 
-                ${activeSection === item.id ? "text-[#8245ec]" : ""
-                }`}>
+              <li
+                key={item.id}
+                className={`cursor-pointer hover:text-[#8245ec] 
+                ${activeSection === item.id ? "text-[#8245ec]" : ""}`}
+              >
                 <button onClick={() => handleMenuItemClick(item.id)}>
                   {item.label}
                 </button>
@@ -147,6 +165,6 @@ const Navbar = () => {
       )}
     </nav>
   );
-}
+};
 
 export default Navbar;

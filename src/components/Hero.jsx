@@ -1,7 +1,7 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Tilt from "react-parallax-tilt";
-import profileImage from "../../assets/Personal circle.png";
+import profileImage from "../assets/Personal circle.png";
 
 const About = () => {
   return (
@@ -25,7 +25,7 @@ const About = () => {
             <span className="text-white">I am a </span>
             <TypeAnimation
               sequence={[
-                "Frontend Developer",
+                "Full Stack Developer",
                 2000,
                 "DevOps Engineer",
                 2000,
@@ -42,11 +42,14 @@ const About = () => {
           </h3>
           {/* About me paragraph */}
           <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed">
-            A Front-End Developer passionate about creating modern, responsive,
-            and user-friendly web applications. Skilled in React, Vite, and
-            Tailwind, with growing expertise in DevOps practices such as
-            automation and cloud deployment. Always learning, always building
+            A Full-Stack Developer focused on building modern, scalable, and
+            user-centric web applications. Experienced in crafting
+            high-performance frontends with React 19, Vite, and Tailwind CSS,
+            alongside robust backend systems using Node.js and MongoDB.
+            Passionate about clean architecture, security, and delivering
+            reliable digital products from concept to production.
           </p>
+
           {/* Resume button */}
           <a
             href="https://drive.google.com/file/d/1Q4AaGFcgi103XuYY9ciQpWP_UeBoVWeH/view?usp=drive_link"
