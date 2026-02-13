@@ -10,7 +10,7 @@ import netlifylogo from "../assets/tech-logo/netlify.png";
 import reactjslogo from "../assets/tech-logo/reactjs.png";
 import reduxlogo from "../assets/tech-logo/redux.png";
 import tailwindcsslogo from "../assets/tech-logo/tailwindcss.png";
-import vite from "../assets/tech-logo/vite.png";
+import vite from "../assets/tech-logo/Vite.png";
 // import typescriptlogo from "./assets/tech-logo/typescript.png";
 import vercellogo from "../assets/tech-logo/vercel.png";
 import vscodelogo from "../assets/tech-logo/vscode.png";
