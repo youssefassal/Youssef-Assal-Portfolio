@@ -36,6 +36,8 @@ const Experience = () => {
                 src={experience.img}
                 alt={experience.company}
                 className="w-full h-full object-cover rounded-full"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -56,6 +58,8 @@ const Experience = () => {
                       src={experience.img}
                       alt={experience.company}
                       className="w-full h-full object-contain"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   {/* Role, Company, Date */}

@@ -40,7 +40,7 @@ const Contact = () => {
           });
         },
         (error) => {
-          toast.error("Error Sending Message.", error);
+          console.error("EmailJS error:", error);
           toast.error("Failed to send message. Please try again.", {
             position: "top-right",
             autoClose: 3000,

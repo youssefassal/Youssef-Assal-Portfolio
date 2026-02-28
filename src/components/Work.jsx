@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { projects } from "../Data/constants";
 
+const PROJECTS_PER_PAGE = 6;
+
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(projects.length / PROJECTS_PER_PAGE);
+  const paginatedProjects = projects.slice(
+    (currentPage - 1) * PROJECTS_PER_PAGE,
+    currentPage * PROJECTS_PER_PAGE,
+  );
 
   const handleOpenModal = (project) => {
     setSelectedProject(project);
@@ -10,6 +19,11 @@ const Work = () => {
 
   const handleCloseModal = () => {
     setSelectedProject(null);
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -39,8 +53,8 @@ const Work = () => {
       </div>
 
       {/* Project Grid */}
-      <div className="grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
-        {projects.map((project) => (
+      <div className="grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {paginatedProjects.map((project) => (
           <div
             key={project.id}
             onClick={() => handleOpenModal(project)}
@@ -51,6 +65,8 @@ const Work = () => {
                 src={project.image}
                 alt={project.title}
                 className="w-full h-48 object-cover rounded-xl"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="p-6">
@@ -80,6 +96,41 @@ const Work = () => {
         ))}
       </div>
 
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="flex justify-center items-center gap-3 mt-14">
+          <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="px-4 py-2 rounded-full border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed text-sm font-semibold"
+          >
+            ← Prev
+          </button>
+
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              onClick={() => handlePageChange(page)}
+              className={`w-9 h-9 rounded-full border text-sm font-bold transition-all ${
+                currentPage === page
+                  ? "bg-purple-600 border-purple-600 text-white shadow-[0_0_12px_rgba(130,69,236,0.6)]"
+                  : "border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
+              }`}
+            >
+              {page}
+            </button>
+          ))}
+
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className="px-4 py-2 rounded-full border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed text-sm font-semibold"
+          >
+            Next →
+          </button>
+        </div>
+      )}
+
       {/* Modal container */}
       {selectedProject && (
         <div
@@ -104,6 +155,8 @@ const Work = () => {
                   src={selectedProject.image}
                   alt={selectedProject.title}
                   className="lg:w-full w-[95%] object-cover rounded-xl shadow-2xl"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="lg:p-8 p-6">
@@ -124,14 +177,20 @@ const Work = () => {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <a
-                    href={selectedProject.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-1/2 bg-gray-800 hover:bg-purple-800 text-gray-400 lg:px-6 lg:py-2 px-2 py-1 rounded-xl lg:text-lg text-sm font-semibold text-center transition-all"
-                  >
-                    View Code
-                  </a>
+                  {selectedProject.github ? (
+                    <a
+                      href={selectedProject.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-1/2 bg-gray-800 hover:bg-purple-800 text-gray-400 lg:px-6 lg:py-2 px-2 py-1 rounded-xl lg:text-lg text-sm font-semibold text-center transition-all"
+                    >
+                      View Code
+                    </a>
+                  ) : (
+                    <span className="w-1/2 bg-gray-800/40 text-gray-600 lg:px-6 lg:py-2 px-2 py-1 rounded-xl lg:text-lg text-sm font-semibold text-center cursor-not-allowed select-none">
+                      Private Repo
+                    </span>
+                  )}
                   <a
                     href={selectedProject.webapp}
                     target="_blank"

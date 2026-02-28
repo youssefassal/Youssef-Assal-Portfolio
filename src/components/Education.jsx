@@ -36,6 +36,8 @@ const Education = () => {
                 src={edu.img}
                 alt={edu.school}
                 className="w-full h-full object-cover rounded-full"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -54,6 +56,8 @@ const Education = () => {
                     src={edu.img}
                     alt={edu.school}
                     className="w-full h-full object-contain"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 {/* Degree, school, date */}

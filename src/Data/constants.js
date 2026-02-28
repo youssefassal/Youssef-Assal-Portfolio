@@ -36,6 +36,11 @@ import WebMasterLogo from "../assets/company-logo/Webmasters_logo.jpeg";
 // education section logos
 import UniLogo from "../assets/education-logo/Uni.jpeg";
 
+// certification section logos
+import DEPICertLogo from "../assets/company-logo/depi_logo.jpeg";
+import WebMastersCertLogo from "../assets/company-logo/Webmasters_logo.jpeg";
+import GascoCertLogo from "../assets/company-logo/Gasco.jpeg";
+
 // project section logos
 import YadawyHome from "../assets/work-logo/Yadawy.png";
 import RabbitHome from "../assets/work-logo/Rabbit.png";
@@ -44,14 +49,6 @@ import EasyBuyHome from "../assets/work-logo/EasyBuy.png";
 import CryptoplaceHome from "../assets/work-logo/Cryptoplace.png";
 import NetflexHome from "../assets/work-logo/Netflex-Clone.png";
 import BasketHome from "../assets/work-logo/Basket.png";
-import shrimpzoneHome from "../assets/work-logo/Shrimp-zone.png";
-import ESportsHome from "../assets/work-logo/esports.png";
-import moviesappHome from "../assets/work-logo/Movieapp.png";
-import TodoHome from "../assets/work-logo/Todo.png";
-import PeripheralHome from "../assets/work-logo/peripherals-ecommerce.png";
-import laptopstorev2Home from "../assets/work-logo/Laptopstore.png";
-import laptopstorev1Home from "../assets/work-logo/Laptopstorev1.png";
-import emptyHome2 from "../assets/work-logo/empty2.png";
 
 export const SkillsInfo = [
   {
@@ -214,6 +211,54 @@ export const education = [
   },
 ];
 
+export const certifications = [
+  {
+    id: 0,
+    img: DEPICertLogo,
+    title: "DevOps Professional Training",
+    issuer: "Digital Egypt Pioneers Initiative - DEPI",
+    date: "Dec 2025",
+    desc: "Completed an intensive government-sponsored DevOps track covering Linux, Git, Ansible, Docker, Kubernetes, Prometheus, Grafana, and AWS cloud infrastructure.",
+    credential:
+      "https://drive.google.com/file/d/1hSJobBrzrMq_ELrbA_N_Zq_3SAP5D-MO/view?usp=sharing",
+    skills: ["Linux", "Docker", "Kubernetes", "Ansible", "AWS", "Grafana"],
+  },
+  {
+    id: 1,
+    img: WebMastersCertLogo,
+    title: "Front End Development Internship",
+    issuer: "Web Masters",
+    date: "Aug 2025",
+    desc: "Completed a hands-on front-end internship building production-quality UI components with React.js, Tailwind CSS, and Vite in an agile team environment.",
+    credential:
+      "https://drive.google.com/file/d/1KkHX981VAhwUn_Y3e_QTZkB4FUSGNKJ6/view?usp=sharing",
+    skills: [
+      "React JS",
+      "Tailwind CSS",
+      "Vite",
+      "JavaScript",
+      "Responsive Design",
+    ],
+  },
+  {
+    id: 2,
+    img: GascoCertLogo,
+    title: "Network & IT Infrastructure Internship",
+    issuer: "Egyptian Natural Gas Company - Gasco",
+    date: "Sep 2025",
+    desc: "Completed a 1-month internship gaining hands-on exposure to IT infrastructure, SCADA systems, NEC Microwave Networks, VSAT, and Safety Engineering.",
+    credential:
+      "https://drive.google.com/file/d/1ZjsTU_V5NSO-8_NOxASFqVIvqzoDKqZ3/view?usp=sharing",
+    skills: [
+      "SCADA",
+      "Network",
+      "VSAT",
+      "IT Infrastructure",
+      "Safety Engineering",
+    ],
+  },
+];
+
 export const projects = [
   {
     id: 0,
@@ -244,7 +289,7 @@ export const projects = [
       "Vercel Deployment",
       "Hugging Face Spaces",
     ],
-    github: "https://github.com/yourusername/yadawy",
+    github: "",
     webapp: "https://yadawy.me",
   },
   {
@@ -379,85 +424,5 @@ export const projects = [
     ],
     github: "https://github.com/youssefassal/Basket-Ecommerce",
     webapp: "https://basket-ruddy.vercel.app/",
-  },
-  {
-    id: 7,
-    title: "Shrimp Zone - Restaurant Website",
-    description:
-      "Built a fully responsive multi-page restaurant website using React, Bootstrap, and React Router. Implemented dynamic routing for smooth navigation and structured reusable components to improve scalability. Styled with Bootstrap to ensure a consistent and user-friendly layout across devices.",
-    image: shrimpzoneHome,
-    tags: ["React JS", "Bootstrap", "React Router", "Responsive Web Design"],
-    github: "https://github.com/youssefassal/Shrimp-Zone-Project",
-    webapp: "https://youssefassal.github.io/Shrimp-Zone-Project/",
-  },
-  {
-    id: 8,
-    title: "E-Sports Team Website",
-    description:
-      "Designed and developed a responsive website using HTML, CSS, and Bootstrap to showcase teams, events, and news. Focused on creating a clean layout, smooth navigation, and a visually appealing user experience to highlight e-sports content effectively.",
-    image: ESportsHome,
-    tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Responsive Web Design"],
-    github: "https://github.com/youssefassal/3rd-FE-Project",
-    webapp: "https://youssefassal.github.io/3rd-FE-Project/",
-  },
-  {
-    id: 9,
-    title: "Movies App",
-    description:
-      "Created a responsive movie browsing website using HTML, CSS, JavaScript, and Bootstrap. Features key sections such as “Opening This Week” and “Coming Soon,” providing users with an organized and engaging way to explore movie releases.",
-    image: moviesappHome,
-    tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Responsive Web Design"],
-    github: "https://github.com/youssefassal/Phase1_Task1",
-    webapp: "https://youssefassal.github.io/Phase1_Task1/",
-  },
-  {
-    id: 10,
-    title: "Simple Todo List App",
-    description:
-      "Built a simple and responsive Todo List app using HTML, CSS, JavaScript, and Bootstrap. Allows users to add tasks, mark them as completed, and remove them, providing an easy way to stay organized.",
-    image: TodoHome,
-    tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Responsive Web Design"],
-    github: "https://github.com/youssefassal/Phase1_Task2",
-    webapp: "https://youssefassal.github.io/Phase1_Task2/",
-  },
-  {
-    id: 11,
-    title: "Simple Peripherals Store",
-    description:
-      "Developed a simple e-commerce website for gaming peripherals using HTML, CSS, JavaScript, and Bootstrap. Implemented product search by category and name, along with a signup and login system that stores user information in local storage. Designed to be responsive and user-friendly for smooth browsing and shopping.",
-    image: PeripheralHome,
-    tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    github: "https://github.com/youssefassal/Shopping-website-1st-javascript",
-    webapp:
-      "https://youssefassal.github.io/Shopping-website-1st-javascript/index.html",
-  },
-  {
-    id: 12,
-    title: "Simple Laptop Store App v2.0",
-    description:
-      "Built a simple online store using HTML, CSS, and JavaScript. Implemented core e-commerce features including adding products to a cart and automatically calculating the total cart amount. Designed with a focus on simplicity and ease of use.",
-    image: laptopstorev2Home,
-    tags: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/youssefassal/First-JS-Project",
-    webapp: "https://youssefassal.github.io/First-JS-Project/",
-  },
-  {
-    id: 13,
-    title: "Simple Laptop Store App v1.0",
-    description:
-      "Created a simple, non-responsive laptop store layout using only HTML and CSS. Showcased products in a clean static design to simulate an online storefront.",
-    image: laptopstorev1Home,
-    tags: ["HTML", "CSS"],
-    github: "https://github.com/youssefassal/2nd-FE-project",
-    webapp: "https://youssefassal.github.io/2nd-FE-project/",
-  },
-  {
-    id: 14,
-    title: "",
-    description: "",
-    image: emptyHome2,
-    tags: [],
-    github: "",
-    webapp: "",
   },
 ];

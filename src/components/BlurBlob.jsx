@@ -1,39 +1,42 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
-const BlurBlob = ({ position , size }) => {
-    // Destructure position and size from props
-    const { top, left } = position;
-    const { width, height } = size;
+const BlurBlob = ({ position, size }) => {
+  // Destructure position and size from props
+  const { top, left } = position;
+  const { width, height } = size;
 
   return (
-    <div className="absolute"
-    style={{
+    <div
+      className="absolute"
+      aria-hidden="true"
+      style={{
         top: top,
         left: left,
         width: width,
         height: height,
-        transform: 'translate(-50%, -50%)',
-    }}
+        transform: "translate(-50%, -50%)",
+        contain: "layout style",
+      }}
     >
-      <div className="w-full h-full bg-purple-500 rounded-full opacity-20 blur-3xl animate-blob">
-
-      </div>
+      <div
+        className="w-full h-full bg-purple-500 rounded-full opacity-20 blur-3xl animate-blob"
+        style={{ willChange: "transform" }}
+      ></div>
     </div>
   );
-}
+};
 
 //Define prop types
 BlurBlob.propTypes = {
-    position: PropTypes.shape({
-        top: PropTypes.string,
-        left: PropTypes.string,
-    }),
-    size: PropTypes.shape({
-        width: PropTypes.string,
-        height: PropTypes.string,
-    }).isRequired,
+  position: PropTypes.shape({
+    top: PropTypes.string,
+    left: PropTypes.string,
+  }),
+  size: PropTypes.shape({
+    width: PropTypes.string,
+    height: PropTypes.string,
+  }).isRequired,
 };
 
 export default BlurBlob;

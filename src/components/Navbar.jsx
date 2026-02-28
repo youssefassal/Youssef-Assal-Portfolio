@@ -12,7 +12,7 @@ const Navbar = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -40,21 +40,22 @@ const Navbar = () => {
     { id: "experience", label: "Experience" },
     { id: "work", label: "Work" },
     { id: "education", label: "Education" },
+    { id: "certifications", label: "Certs" },
   ];
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] md:px-[7vw] lg:px-[20vw] ${
+      className={`fixed top-0 w-full z-50 transition duration-300 px-[4vw] md:px-[4vw] lg:px-[20vw] ${
         isScrolled
           ? "bg-[#050414] bg-opacity-50 backdrop-blur-md shadow-md"
           : "bg-transparent"
       }`}
     >
-      <div className="text-white py-5 flex justify-around items-center">
+      <div className="text-white py-5 flex justify-between items-center gap-2">
         {/* Logo */}
         <div
           onClick={() => handleMenuItemClick("hero")}
-          className="text-lg font-semibold cursor-pointer"
+          className="text-base lg:text-lg font-semibold cursor-pointer shrink-0"
         >
           <span className="text-[#8245ec]">&lt;</span>
           <span className="text-white">Youssef</span>
@@ -64,11 +65,11 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 text-gray-300">
+        <ul className="hidden md:flex space-x-3 lg:space-x-6 text-gray-300 text-base">
           {menuItems.map((item) => (
             <li
               key={item.id}
-              className={`cursor-pointer hover:text-[#8245ec] ${
+              className={`cursor-pointer hover:text-[#8245ec] whitespace-nowrap ${
                 activeSection === item.id ? "text-[#8245ec]" : ""
               }`}
             >
@@ -79,8 +80,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="flex items-center">
-          {/* Social Media Icons */}
+        <div className="flex items-center shrink-0">
           <div className="hidden md:flex space-x-4">
             <a
               href="https://github.com/youssefassal"
@@ -101,10 +101,10 @@ const Navbar = () => {
           </div>
 
           {/* Contact Button */}
-          <div className="hidden md:flex sm:ml-4">
+          <div className="hidden md:flex ml-3 lg:ml-4">
             <button
               onClick={() => handleMenuItemClick("contact")}
-              className="text-gray-300 hover:text-[#8245ec] border-2 border-[#8245ec] px-4 py-2 rounded-4xl"
+              className="text-gray-300 hover:text-[#8245ec] border-2 border-[#8245ec] px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-sm lg:text-base whitespace-nowrap"
             >
               Contact Me
             </button>

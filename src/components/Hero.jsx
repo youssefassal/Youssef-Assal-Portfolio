@@ -17,9 +17,16 @@ const About = () => {
             Hi, I am
           </h1>
           {/* Name */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3 leading-tight">
             Youssef Assal
           </h2>
+          {/* Availability badge */}
+          <div className="flex justify-center md:justify-start mb-4">
+            <span className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/40 text-green-400 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+              Available for hire
+            </span>
+          </div>
           {/* Skills heading with typing effect */}
           <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#8245ec] leading-tight">
             <span className="text-white">I am a </span>
@@ -27,13 +34,7 @@ const About = () => {
               sequence={[
                 "Full Stack Developer",
                 2000,
-                "DevOps Engineer",
-                2000,
-                "App Developer",
-                2000,
                 "UI/UX Designer",
-                2000,
-                "Coder",
                 2000,
               ]}
               speed={50}
@@ -42,12 +43,12 @@ const About = () => {
           </h3>
           {/* About me paragraph */}
           <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed">
-            A Full-Stack Developer focused on building modern, scalable, and
-            user-centric web applications. Experienced in crafting
-            high-performance frontends with React 19, Vite, and Tailwind CSS,
-            alongside robust backend systems using Node.js and MongoDB.
-            Passionate about clean architecture, security, and delivering
-            reliable digital products from concept to production.
+            Full-Stack &amp; DevOps Engineer specializing in secure,
+            high-performance web platforms. I build production-ready systems
+            end-to-end — from React 19 frontends to hardened Node.js/MongoDB
+            backends with RBAC, real-time features, and cloud deployment
+            pipelines. I don&apos;t just write code — I architect, secure, and
+            ship reliable digital products.
           </p>
 
           {/* Resume button */}
@@ -79,9 +80,35 @@ const About = () => {
               src={profileImage}
               alt="Youssef Assal"
               className="w-full h-full rounded-full object-cover drop-shadow-[0_10px_20px_rgba(130,69,236,0.5)]"
+              fetchPriority="high"
+              decoding="sync"
             />
           </Tilt>
         </div>
+      </div>
+
+      {/* GitHub Stats */}
+      <div className="mt-16 flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
+        <img
+          src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=youssefassal&theme=tokyonight&count_private=true"
+          alt="Youssef Assal GitHub Stats"
+          className="w-full sm:w-1/2 max-w-md rounded-xl border border-purple-500/30 shadow-[0_0_20px_1px_rgba(130,69,236,0.15)]"
+          loading="lazy"
+          decoding="async"
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+          }}
+        />
+        <img
+          src="https://streak-stats.demolab.com/?user=youssefassal&theme=tokyonight&hide_border=true&background=050414&ring=a855f7&fire=8245ec&currStreakLabel=a855f7&sideLabels=9ca3af&dates=9ca3af&stroke=8245ec"
+          alt="Youssef Assal GitHub Streak"
+          className="w-full sm:w-1/2 max-w-md rounded-xl border border-purple-500/30 shadow-[0_0_20px_1px_rgba(130,69,236,0.15)]"
+          loading="lazy"
+          decoding="async"
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+          }}
+        />
       </div>
     </section>
   );
