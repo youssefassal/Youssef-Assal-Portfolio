@@ -37,6 +37,11 @@ a {
   font-family: "Poppins", sans-serif;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 html.lenis,
 html.lenis body {
   height: auto;
@@ -87,6 +92,13 @@ html.lenis body {
 @media (hover: hover) and (pointer: fine) {
   * {
     cursor: none !important;
+  }
+}
+
+/* Hide custom cursor on mobile, tablet, and touch screens */
+@media (max-width: 1024px) or (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
   }
 }
 
