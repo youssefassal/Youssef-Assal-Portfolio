@@ -1,4 +1,6 @@
 import React from "react";
+import { useLenis } from "lenis/react";
+import { motion } from "framer-motion";
 import {
   FaGithub,
   FaLinkedin,
@@ -8,15 +10,32 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+  const lenis = useLenis();
+
   const handleScroll = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+    if (lenis) {
+      lenis.scrollTo(`#${sectionId}`);
+    } else {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
-    <footer className="text-white py-8 px-[12vw] md:px-[7vw] lg:px-[20vw]">
+    <motion.footer
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeInUp}
+      className="text-white py-8 px-[12vw] md:px-[7vw] lg:px-[20vw] border-t border-purple-500/10 mt-12 bg-[#050414]"
+    >
       <div className="container mx-auto text-center">
         <h2 className="text-xl font-semibold text-purple-500">Youssef Assal</h2>
         {/* Nav links */}
@@ -32,7 +51,7 @@ const Footer = () => {
             <button
               key={index}
               onClick={() => handleScroll(item.id)}
-              className="hover:text-purple-500 text-sm sm:text-base my-1"
+              className="hover:text-purple-500 text-sm sm:text-base my-1 cursor-pointer transition-colors"
             >
               {item.name}
             </button>
@@ -57,15 +76,17 @@ const Footer = () => {
               link: "https://www.facebook.com/youssef.assal.936675/",
             },
           ].map((item, index) => (
-            <a
+            <motion.a
               key={index}
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xl hover:text-purple-500 transition-transform transform hover:scale-110"
+              whileHover={{ scale: 1.15, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="text-xl hover:text-purple-500 transition-colors cursor-pointer"
             >
               {item.icon}
-            </a>
+            </motion.a>
           ))}
         </div>
 
@@ -74,7 +95,7 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} Youssef Assal. All rights reserved.
         </p>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

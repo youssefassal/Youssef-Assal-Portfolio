@@ -37,8 +37,25 @@ a {
   font-family: "Poppins", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 @layer utilities {
@@ -65,3 +82,59 @@ html {
     background: #7c3aed;
   }
 }
+
+/* Hide default cursor on desktop devices to allow custom cursor */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    to right,
+    #8245ec 10%,
+    #a855f7 30%,
+    #ffffff 50%,
+    #a855f7 70%,
+    #8245ec 90%,
+    #8245ec 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shimmer 5s linear infinite;
+  display: inline-block;
+}
+
+.title-shimmer {
+  background: linear-gradient(
+    to right,
+    #ffffff 20%,
+    #c084fc 40%,
+    #ffffff 60%,
+    #c084fc 80%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shimmer 5s linear infinite;
+  display: inline-block;
+}
+
+

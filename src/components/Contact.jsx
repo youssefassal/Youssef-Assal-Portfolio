@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 import {
   FaFacebook,
   FaGithub,
@@ -54,6 +55,21 @@ const Contact = () => {
       );
   };
 
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  const fadeInLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  const fadeInRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
     <section
       id="contact"
@@ -62,18 +78,30 @@ const Contact = () => {
       <ToastContainer />
 
       {/* section title */}
-      <div className="text-center mb-16 ">
-        <h2 className="text-4xl font-bold text-white">CONTACT</h2>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+        className="text-center mb-16 "
+      >
+        <h2 className="text-4xl font-bold title-shimmer">CONTACT</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-2"></div>
         <p className="text-gray-400 mt-4 text-lg font-semibold">
           I’d love to hear from you—reach out for any opportunities or
           questions!
         </p>
-      </div>
+      </motion.div>
       {/* contact content */}
       <div className="mt-8 w-full flex flex-col md:flex-row items-center justify-center">
         {/* contact information */}
-        <div className="mt-8 w-full max-w-md bg-[#0d081f] p-6 rounded-lg shadow-lg border border-gray-700">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeInLeft}
+          className="mt-8 w-full max-w-md bg-[#0d081f] p-6 rounded-lg shadow-lg border border-gray-700"
+        >
           <h3 className="text-xl font-bold text-white text-center">
             Connect Information
           </h3>
@@ -126,22 +154,30 @@ const Contact = () => {
                   link: "https://www.facebook.com/youssef.assal.936675/",
                 },
               ].map((item, index) => (
-                <a
+                <motion.a
                   key={index}
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white text-2xl hover:text-purple-500 transition-transform transform hover:scale-110"
+                  whileHover={{ scale: 1.15, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="text-white text-2xl hover:text-purple-500 transition-colors cursor-pointer"
                 >
                   {item.icon}
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* contact form */}
-        <div className="mt-8 md:ml-8 w-full max-w-md bg-[#0d081f] p-6 rounded-lg shadow-lg border border-gray-700 py-11">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeInRight}
+          className="mt-8 md:ml-8 w-full max-w-md bg-[#0d081f] p-6 rounded-lg shadow-lg border border-gray-700 py-11"
+        >
           <h3 className="text-xl font-bold text-white text-center">
             Connect With Me Via Email 👇
           </h3>
@@ -180,14 +216,16 @@ const Contact = () => {
             ></textarea>
 
             {/* send button */}
-            <button
+            <motion.button
               type="submit"
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-500 py-3 text-white font-semibold rounded-md hover:opacity-90 transition"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full bg-gradient-to-r from-purple-600 to-pink-500 py-3 text-white font-semibold rounded-md hover:opacity-90 transition cursor-pointer"
             >
               Send
-            </button>
+            </motion.button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

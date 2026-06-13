@@ -42,7 +42,7 @@ import WebMastersCertLogo from "../assets/company-logo/Webmasters_logo.jpeg";
 import GascoCertLogo from "../assets/company-logo/Gasco.jpeg";
 
 // project section logos
-import YadawyHome from "../assets/work-logo/Yadawy.png";
+import SamoullaHome from "../assets/work-logo/Samoulla.png";
 import RabbitHome from "../assets/work-logo/Rabbit.png";
 import AuraHome from "../assets/work-logo/AURA.png";
 import EasyBuyHome from "../assets/work-logo/EasyBuy.png";
@@ -262,10 +262,10 @@ export const certifications = [
 export const projects = [
   {
     id: 0,
-    title: "Yadawy – AI-Powered E-Commerce",
+    title: "Samoulla – AI-Powered E-Commerce",
     description:
-      "Yadawy is a premium, AI-powered e-commerce platform built to deliver a personalized, secure, and intelligent shopping experience. The platform evolves beyond a traditional marketplace by integrating an AI-driven chatbot assistant and a behavioral recommendation engine, transforming user interactions into a smart, data-driven ecosystem. The frontend is built with React 19, Vite, Tailwind CSS 4, and Redux Toolkit, featuring real-time updates via Socket.io, dynamic data visualizations with Recharts, smooth navigation using React Router 7, and performance optimizations through code splitting with React.lazy and Suspense. The backend is powered by Node.js, Express, and MongoDB, enhanced with enterprise-grade security layers including Helmet, rate limiting, NoSQL sanitization, XSS protection, HPP prevention, and professional logging using Winston. Yadawy implements a robust RBAC system with real-time session invalidation and permission synchronization. Payments are securely handled through an advanced Paymob integration with atomic rollback mechanisms to maintain data integrity. A dedicated AI microservice built with Python and FastAPI powers the NLP-based chatbot and recommendation system. The platform also includes SEO optimization, marketing analytics, and traffic intelligence features, and is independently deployed across Vercel and Hugging Face Spaces for scalability and reliability.",
-    image: YadawyHome,
+      "Samoulla is a premium, AI-powered e-commerce platform built to deliver a personalized, secure, and intelligent shopping experience. The platform evolves beyond a traditional marketplace by integrating an AI-driven chatbot assistant and a behavioral recommendation engine, transforming user interactions into a smart, data-driven ecosystem. The frontend is built with React 19, Vite, Tailwind CSS 4, and Redux Toolkit, featuring real-time updates via Socket.io, dynamic data visualizations with Recharts, smooth navigation using React Router 7, and performance optimizations through code splitting with React.lazy and Suspense. The backend is powered by Node.js, Express, and MongoDB, enhanced with enterprise-grade security layers including Helmet, rate limiting, NoSQL sanitization, XSS protection, HPP prevention, and professional logging using Winston. Samoulla implements a robust RBAC system with real-time session invalidation and permission synchronization. Payments are securely handled through an advanced Paymob integration with atomic rollback mechanisms to maintain data integrity. A dedicated AI microservice built with Python and FastAPI powers the NLP-based chatbot and recommendation system. The platform also includes SEO optimization, marketing analytics, and traffic intelligence features, and is independently deployed across Vercel and Hugging Face Spaces for scalability and reliability.",
+    image: SamoullaHome,
     tags: [
       "React 19",
       "Vite",
@@ -290,7 +290,7 @@ export const projects = [
       "Hugging Face Spaces",
     ],
     github: "",
-    webapp: "https://yadawy.me",
+    webapp: "https://www.samoulla.com/ar",
   },
   {
     id: 1,

@@ -1,3 +1,6 @@
+import React, { useState } from "react";
+import { ReactLenis } from "lenis/react";
+import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
@@ -9,30 +12,55 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import BlurBlob from "./components/BlurBlob";
 import About from "./components/About";
+import ScrollProgress from "./components/ScrollProgress";
+import CustomCursor from "./components/CustomCursor";
+import ScrollToTop from "./components/ScrollToTop";
+import IntroLoader from "./components/IntroLoader";
+import SectionDivider from "./components/SectionDivider";
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <div className="bg-[#050414] overflow-x-hidden">
-      <BlurBlob
-        position={{ top: "35%", left: "20%" }}
-        size={{ width: "30%", height: "40%" }}
-      />
+    <ReactLenis root>
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <IntroLoader key="loader" onComplete={() => setIsLoading(false)} />
+        )}
+      </AnimatePresence>
 
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      <ScrollProgress />
+      <CustomCursor />
+      <ScrollToTop />
+      <div className="bg-[#050414]">
+        <BlurBlob
+          position={{ top: "35%", left: "20%" }}
+          size={{ width: "30%", height: "40%" }}
+        />
 
-      <div className="relative pt-20">
-        <Navbar />
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Work />
-        <Education />
-        <Certifications />
-        <Contact />
-        <Footer />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+
+        <div className="relative pt-20">
+          <Navbar />
+          <Hero />
+          <SectionDivider />
+          <About />
+          <SectionDivider />
+          <Skills />
+          <SectionDivider />
+          <Experience />
+          <SectionDivider />
+          <Work />
+          <SectionDivider />
+          <Education />
+          <SectionDivider />
+          <Certifications />
+          <SectionDivider />
+          <Contact />
+          <Footer />
+        </div>
       </div>
-    </div>
+    </ReactLenis>
   );
 };
 

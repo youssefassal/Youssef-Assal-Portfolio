@@ -1,9 +1,30 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Tilt from "react-parallax-tilt";
+import { motion } from "framer-motion";
 import profileImage from "../assets/Personal circle.png";
 
 const About = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 100, damping: 15 },
+    },
+  };
+
   return (
     <section
       id="hero"
@@ -11,24 +32,41 @@ const About = () => {
     >
       <div className="flex flex-col-reverse md:flex-row justify-between items-center">
         {/* left side */}
-        <div className="md:w-1/2 text-center md:text-left mt-8 md:mt-0">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="md:w-1/2 text-center md:text-left mt-8 md:mt-0"
+        >
           {/* Greeting */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-2 leading-tight">
+          <motion.h1
+            variants={itemVariants}
+            className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-2 leading-tight"
+          >
             Hi, I am
-          </h1>
+          </motion.h1>
           {/* Name */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3 leading-tight">
+          <motion.h2
+            variants={itemVariants}
+            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 leading-tight text-shimmer"
+          >
             Youssef Assal
-          </h2>
+          </motion.h2>
           {/* Availability badge */}
-          <div className="flex justify-center md:justify-start mb-4">
+          <motion.div
+            variants={itemVariants}
+            className="flex justify-center md:justify-start mb-4"
+          >
             <span className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/40 text-green-400 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
               Available for hire
             </span>
-          </div>
+          </motion.div>
           {/* Skills heading with typing effect */}
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#8245ec] leading-tight">
+          <motion.h3
+            variants={itemVariants}
+            className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#8245ec] leading-tight"
+          >
             <span className="text-white">I am a </span>
             <TypeAnimation
               sequence={[
@@ -40,33 +78,44 @@ const About = () => {
               speed={50}
               repeat={Infinity}
             />
-          </h3>
+          </motion.h3>
           {/* About me paragraph */}
-          <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed">
+          <motion.p
+            variants={itemVariants}
+            className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed"
+          >
             Full-Stack &amp; DevOps Engineer specializing in secure,
             high-performance web platforms. I build production-ready systems
             end-to-end — from React 19 frontends to hardened Node.js/MongoDB
             backends with RBAC, real-time features, and cloud deployment
             pipelines. I don&apos;t just write code — I architect, secure, and
             ship reliable digital products.
-          </p>
+          </motion.p>
 
           {/* Resume button */}
-          <a
-            href="https://drive.google.com/file/d/1Q4AaGFcgi103XuYY9ciQpWP_UeBoVWeH/view?usp=drive_link"
+          <motion.a
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href="https://drive.google.com/file/d/1H42kG35bKq8U0K9WZ3HwvTdbpksoMezg/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300 transform hover:scale-105"
+            className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300 cursor-pointer"
             style={{
               background: "linear-gradient(90deg, #8245ec, #a855f7)",
               boxShadow: "0 0 2px #8245ec, 0 0 2px #8245ec, 0 0 40px #8245ec",
             }}
           >
             DOWNLOAD CV
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
         {/* right side */}
-        <div className="md:w-1/2 flex justify-center md:justify-end ">
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="md:w-1/2 flex justify-center md:justify-end "
+        >
           <Tilt
             className="w-48 h-48 sm:w-64 sm:h-64 md:w-[30rem] md:h-[30rem] border-purple-700 rounded-full"
             tiltMaxAngleX={20}
@@ -84,11 +133,16 @@ const About = () => {
               decoding="sync"
             />
           </Tilt>
-        </div>
+        </motion.div>
       </div>
 
       {/* GitHub Stats */}
-      <div className="mt-16 flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        className="mt-16 flex flex-col sm:flex-row justify-center items-center gap-4 w-full"
+      >
         <img
           src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=youssefassal&theme=tokyonight&count_private=true"
           alt="Youssef Assal GitHub Stats"
@@ -109,7 +163,7 @@ const About = () => {
             e.currentTarget.style.display = "none";
           }}
         />
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,27 +1,60 @@
 import React from "react";
 import { certifications } from "../Data/constants";
+import { motion } from "framer-motion";
 
 const Certifications = () => {
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 80,
+        damping: 15,
+        delay: index * 0.1,
+      },
+    }),
+  };
+
   return (
     <section
       id="certifications"
       className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans"
     >
       {/* Section title */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white">CERTIFICATIONS</h2>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+        className="text-center mb-16"
+      >
+        <h2 className="text-4xl font-bold title-shimmer">CERTIFICATIONS</h2>
         <div className="w-48 h-1 bg-purple-500 mx-auto mt-2"></div>
         <p className="text-gray-400 mt-4 text-lg font-semibold">
           Verified credentials and training programs I have completed.
         </p>
-      </div>
+      </motion.div>
 
       {/* Certifications Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {certifications.map((cert) => (
-          <div
+        {certifications.map((cert, index) => (
+          <motion.div
             key={cert.id}
-            className="flex flex-col bg-gray-900 rounded-2xl border border-purple-500 shadow-[0_0_20px_1px_rgba(130,69,236,0.2)] p-6 hover:-translate-y-1 transition-transform duration-300"
+            custom={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={cardVariants}
+            whileHover={{ y: -6 }}
+            className="flex flex-col bg-gray-900 rounded-2xl border border-purple-500/20 shadow-[0_0_15px_rgba(130,69,236,0.15)] p-6 transition-all duration-300 hover:border-[#a855f7]/60 hover:shadow-[0_0_25px_rgba(130,69,236,0.45)]"
           >
             {/* Header: logo + issuer */}
             <div className="flex items-center gap-4 mb-4">
@@ -69,11 +102,11 @@ const Certifications = () => {
               href={cert.credential}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center text-sm font-semibold text-gray-300 hover:text-white border-2 border-[#8245ec] hover:bg-[#8245ec] px-4 py-2 rounded-full transition-all duration-300"
+              className="block text-center text-sm font-semibold text-gray-300 hover:text-white border-2 border-[#8245ec] hover:bg-[#8245ec] px-4 py-2 rounded-full transition-all duration-300 cursor-pointer"
             >
               View Credential
             </a>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
