@@ -4,7 +4,7 @@ import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import profileImage from "../assets/Personal circle.png";
 
-const About = () => {
+const Hero = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -168,4 +168,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Hero;
